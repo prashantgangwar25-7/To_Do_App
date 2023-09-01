@@ -2,7 +2,21 @@ const express = require("express");
 const app = express();
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/to_do', {useNewUrlParser: true});
+
+require("dotenv").config();
+
+// mongoose.connect('mongodb://localhost:27017/to_do', {useNewUrlParser: true});
+mongoose
+  .connect(process.env.MONGO_URL,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Database Connected Successfully");
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
 
 const bodyParser = require("body-parser"); 
 app.use(bodyParser.urlencoded({extended: true}));//Syntax for using body-parser
