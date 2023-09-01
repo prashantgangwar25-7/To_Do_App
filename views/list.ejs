@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>To Do</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+
+<div class="content">
+  <div class="body">
+    <div id="heading" class="box">
+        <h1>TO DO</h1>
+    </div>
+
+    <div class="box">
+        <%  for (element of addTask) {  %>
+
+        <form action="/" method="post">
+        <div class="item">
+            <input type="checkbox" name="checked" value="<%= element.name %>" onChange="this.form.submit()">
+                <p class="p"> <%= element.name %> </p>
+        </div>
+        
+        <%  } %>
+
+        <form class="item" action="/" method="post">
+            <!-- Form will make a 'post' request to the home route when the submit button is clicked -->
+        
+            >  <input type="text" name="nextTask" placeholder="Type New Task" autocomplete="off">
+            <!-- Text submitted in variable 'nextTask' can be collected using body-parser -->
+            <input type="submit" value="Add" name="button">
+        
+        </form>
+    </div>
+</div>
+
+    <footer class="site-footer">
+        <div class="footer-nav" >
+            <p> &copy Prashant Gangwar</p>
+          </div>
+        <div class="social-wrapper">
+            <ul>
+                <li>
+                <a href="https://twitter.com/prashant25_7" target="_blank">
+                <img src="https://www.clipartmax.com/png/full/8-83608_twitter-circle-logo-svg.png" alt="Twitter Logo" class="twitter-icon"></a>
+                </li>
+                
+                <li>
+                <a href="https://www.instagram.com/prashantgangwar25.7/" target="_blank">
+                <img src="https://www.mchenryvillage.com/images/instagram-icon.png" alt="Instagram" class="instagram-icon"></a>
+                </li>
+                
+                <li>
+                <a href="https://www.linkedin.com/in/prashant-gangwar-304a201b5" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/72px-LinkedIn_icon_circle.svg.png" alt="Linkedin" class="linkedin-icon"></a>
+                </li>
+                
+                <li>
+                <a href="https://www.facebook.com/people/Prashant-Gangwar/100070481771182/" target="_blank">
+                <img src="http://www.iconarchive.com/download/i54037/danleech/simple/facebook.ico" alt="Facebook" class="facebook-icon"></a>
+                </li>
+                
+                <li>
+                <a href="mailto:prashantgangwar45@gmail.com" target="_blank">
+                <img src="https://seeklogo.com/images/G/gmail-icon-logo-9ADB17D3F3-seeklogo.com.png" alt="Email Me" class="email_me-icon"></a>
+                </li>
+                
+                <li>
+                <a href="https://www.youtube.com/channel/UCkFXDZ7VjeTBMdiC-yDNXKA" target="_blank">
+                <img src="https://lh3.googleusercontent.com/j_RwVcM9d47aBDW5DS1VkdxUYCkDUCB6wZglv4x-9SmsxO0VaFs7Csh-FmKRCWz9r_Ef=w170" alt="Youtube" class="youtube-icon"></a>
+                </li>
+                
+                <li>
+                <a href="https://github.com/prashantgangwar25-7" target="_blank">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Github" class="github-icon"></a>
+                </li>
+                
+            </ul>
+                </div>
+              </footer>
+</div>
+            </body>
+</html>
